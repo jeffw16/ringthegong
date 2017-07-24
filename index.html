@@ -12,11 +12,15 @@ html {
   background-size: cover;
 }
 </style>
-<audio id="gong" src="gong.mp3"></audio>
+<!-- jQuery [3.2.1] (Google Hosted Libraries) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- howler.js [2.0.4] (CDNJS) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.min.js"></script>
 <script>
-window.onload = function() {
-    document.getElementById("gong").play();
-}
+var gong = new Howl({ src: ['gong.mp3', 'gong.mp4'] });
+$('body').on('click', function() {
+  gong.play();
+});
 </script>
 </body>
 </html>
